@@ -38,3 +38,15 @@ predictions = lm.predict(X_test)
 #Graph plotting difference between expected(y-test) values and predicted(predictions) values
 plt.scatter(y_test,predictions)
 plt.show()
+
+#Calculating error
+from sklearn import metrics
+
+print('mean_absolute_error:')
+print(metrics.mean_absolute_error(y_test,predictions))
+
+print('mean_squared_error:')
+print(metrics.mean_squared_error(y_test,predictions))
+
+print('root_mean_squared_error:')
+print(np.sqrt(metrics.mean_squared_error(y_test,predictions)))
